@@ -14,6 +14,10 @@ namespace CadastroCliente.Models
         [MinLength(3, ErrorMessage = "Este campo deve conter entre 3  e 50 caracters")]
         public string Nome { get; set; }
 
-        public Estado IdEstado { get; set; }
+        [Required(ErrorMessage = "Este campo é obrigatório")]
+        [Display(Name = "Id Estado")]
+        [Range(1, int.MaxValue, ErrorMessage = "Estado Inválida")]
+        public int IdEstado { get; set; }
+        public Estado Estado { get; set; }
     }
 }
