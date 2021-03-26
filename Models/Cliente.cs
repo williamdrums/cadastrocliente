@@ -40,7 +40,7 @@ namespace CadastroCliente.Models
         [Range(1, int.MaxValue, ErrorMessage = "Endereço Inválido")]
         public int IdEndereco { get; set; }
 
-        public Endereco endereco { get; set; }
+        public Endereco Endereco { get; set; }
 
     }
 }

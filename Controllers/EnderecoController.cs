@@ -110,7 +110,7 @@ namespace CadastroCliente.Controllers
 
             if (endereco == null)
             {
-                return NotFound(new { message = "Cidade não encontrada" });
+                return NotFound(new { message = "Endereço não encontrado" });
             }
 
             try
