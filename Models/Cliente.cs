@@ -35,7 +35,12 @@ namespace CadastroCliente.Models
         [EmailAddress(ErrorMessage = "E-mail em formato inválido")]
         public string Email { get; set; }
 
-        public Endereco IdEndereco { get; set; }
+        [Required(ErrorMessage = "Este campo é obrigatório")]
+        [Display(Name = "Id Endereço")]
+        [Range(1, int.MaxValue, ErrorMessage = "Endereço Inválido")]
+        public int IdEndereco { get; set; }
+
+        public Endereco endereco { get; set; }
 
     }
 }

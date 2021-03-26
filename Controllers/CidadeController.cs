@@ -16,9 +16,7 @@ namespace CadastroCliente.Controllers
 
         [HttpGet]
         [Route("")]
-        public async Task<ActionResult<List<Cidade>>> Get(
-                 [FromServices] DataContext context
-             )
+        public async Task<ActionResult<List<Cidade>>> Get([FromServices] DataContext context)
         {
             var cidades = await context
             .Cidades.Include(x => x.Estado)
@@ -71,7 +69,7 @@ namespace CadastroCliente.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(new { message = "Não foi possivel criar cidade", e });
+                return BadRequest(new { message = "Não foi possivel salvar cidade", e });
             }
 
         }
@@ -135,5 +133,4 @@ namespace CadastroCliente.Controllers
             }
         }
     }
-
 }

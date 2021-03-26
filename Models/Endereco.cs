@@ -19,12 +19,16 @@ namespace CadastroCliente.Models
         [MinLength(3, ErrorMessage = "Este campo deve conter entre 3 e 40 caracters")]
         public string Bairro { get; set; }
 
-        [Required(ErrorMessage = "Esse campo é obrigatorio")]
+        [Required(ErrorMessage = "Este campo é obrigatório")]
         [Display(Name = "Numero Residência")]
-        [MaxLength(5, ErrorMessage = "Este campo deve conter entre 1 e 5 caracters")]
-        [MinLength(1, ErrorMessage = "Este campo deve conter entre 1 e 5 caracters")]
+        [Range(1, int.MaxValue, ErrorMessage = "Numero Inválido")]
         public int numero { get; set; }
 
-        public Cidade IdCidade { get; set; }
+        [Required(ErrorMessage = "Este campo é obrigatório")]
+        [Display(Name = "Id Cidade")]
+        [Range(1, int.MaxValue, ErrorMessage = "Cidade Inválida")]
+        public int IdCidade { get; set; }
+
+        public Cidade Cidade { get; set; }
     }
 }
