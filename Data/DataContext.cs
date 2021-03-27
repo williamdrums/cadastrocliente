@@ -1,8 +1,9 @@
 
 
+using CadastroCliente.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CadastroCliente.Models
+namespace CadastroCliente.Data
 {
     public class DataContext : DbContext
     {

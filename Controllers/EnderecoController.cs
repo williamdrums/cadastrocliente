@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CadastroCliente.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using CadastroCliente.Data;
 
 namespace CadastroCliente.Controllers
 {

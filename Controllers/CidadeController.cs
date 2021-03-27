@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using CadastroCliente.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using CadastroCliente.Data;
 
 namespace CadastroCliente.Controllers
 {
@@ -18,10 +19,8 @@ namespace CadastroCliente.Controllers
         [Route("")]
         public async Task<ActionResult<List<Cidade>>> Get([FromServices] DataContext context)
         {
-            var cidades = await context
-            .Cidades.Include(x => x.Estado)
-            .AsNoTracking().ToListAsync();
-            return Ok(cidades);
+            var cidades = await context.Cidades.Include(x => x.Estado).AsNoTracking().ToListAsync();
+            return cidades;
         }
 
         [HttpGet]
